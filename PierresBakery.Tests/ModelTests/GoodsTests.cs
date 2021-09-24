@@ -21,17 +21,17 @@ namespace PierresGoods.Tests
       Assert.AreEqual(5, Bread.GetPrice(1)); 
     }
     [TestMethod]
-    public void GetPrice_ReturnsPriceOfTwoLoafs_Int()
+    public void GetPrice_ReturnsPriceOfTwoLoaves_Int()
     {
       Assert.AreEqual(10, Bread.GetPrice(2));
     }
     [TestMethod]
-    public void GetPrice_ReturnsPriceOfThreeLoafsWithDiscount_Int()
+    public void GetPrice_ReturnsPriceOfThreeLoavesWithDiscount_Int()
     {
       Assert.AreEqual(10, Bread.GetPrice(3));
     }
     [TestMethod]
-    public void GetPrice_ReturnsPriceOfTwentyLoafsWithDiscount_Int()
+    public void GetPrice_ReturnsPriceOfTwentyLoavesWithDiscount_Int()
     {
       Assert.AreEqual(70, Bread.GetPrice(20));
     }
