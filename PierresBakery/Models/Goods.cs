@@ -4,50 +4,56 @@ namespace Goods.Models
 {
   public class Bread
   {
-    public static int GetPrice(int breadAmountInt)
+    
+    private static int price = 5;
+    public int Amount {get; set;}
+    public Bread(int amount)
     {
-      int breadPrice = 5;
-      if (breadAmountInt >= 3)
+      Amount = amount;
+    }
+    public static int GetPrice(int breadAmount)
+    {
+      if (breadAmount >= 3)
       {
-        int discount = Bread.GetDiscount(breadAmountInt);;
-        int priceBefore = breadAmountInt * breadPrice;
-        int finalPrice = priceBefore - discount;
-        return finalPrice;
+        int cost = (breadAmount * price) - Bread.GetDiscount(breadAmount);
+        return cost;
       }
       else
       {
-        int totalCost = breadPrice*breadAmountInt;
-        return totalCost;
+        int cost = price*breadAmount;
+        return cost;
       }
     }
-    public static int GetDiscount(int breadAmountInt)
+    public static int GetDiscount(int breadAmount)
     {
-      int breadPrice = 5;
-      int discount = (breadAmountInt - (breadAmountInt % 3)) / 3 * breadPrice;
+      int discount = (breadAmount - (breadAmount % 3)) / 3 * price;
       return discount;
     }
   }
   public class Pastry
   {
-    public static int GetPrice(int pastryAmountInt)
+    private static int price = 2;
+    public int Amount {get; set;}
+    public Pastry(int amount)
     {
-      int pastryPrice = 2;
-      if (pastryAmountInt >= 3)
+      Amount = amount;
+    }
+    public static int GetPrice(int pastryAmount)
+    {
+      if (pastryAmount >= 3)
       {
-        int discount = Pastry.GetDiscount(pastryAmountInt);
-        int priceBefore = pastryAmountInt * pastryPrice;
-        int finalPrice = priceBefore - discount;
-        return finalPrice;
+        int cost = (pastryAmount * price) - Pastry.GetDiscount(pastryAmount);
+        return cost;
       }
       else
       {
-        int totalCost = pastryPrice*pastryAmountInt;
-        return totalCost;
+        int cost = price*pastryAmount;
+        return cost;
       }
     }
-    public static int GetDiscount(int pastryAmountInt)
+    public static int GetDiscount(int pastryAmount)
     {
-      int discount = (pastryAmountInt - (pastryAmountInt % 3)) / 3;
+      int discount = (pastryAmount - (pastryAmount % 3)) / 3;
       return discount;
     }
   }

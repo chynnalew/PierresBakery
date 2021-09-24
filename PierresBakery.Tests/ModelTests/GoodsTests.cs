@@ -11,7 +11,7 @@ namespace PierresGoods.Tests
     [TestMethod]
     public void Bread_CreateNewInstanceOfBread_Bread()
     {
-      Bread testBread = new Bread();
+      Bread testBread = new Bread(1);
       Assert.AreEqual(typeof(Bread), testBread.GetType());
     }
     
@@ -47,7 +47,7 @@ namespace PierresGoods.Tests
     [TestMethod]
     public void Pastry_CreateNewInstanceOfPastry_Pastry()
     {
-      Pastry testPastry = new Pastry();
+      Pastry testPastry = new Pastry(1);
       Assert.AreEqual(typeof(Pastry), testPastry.GetType());
     }
     [TestMethod]
