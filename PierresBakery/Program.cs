@@ -37,14 +37,14 @@ namespace Program
         string userName = Console.ReadLine();
         Console.WriteLine("How many loafs of bread would you like to order?");
         int userBread;
-        while (!int.TryParse(Console.ReadLine(), out userBread))
+        while (!int.TryParse(Console.ReadLine(), out userBread) || userBread < 0)
         {
           Console.WriteLine("Please enter a positive number");
           Console.WriteLine("How many loafs of bread would you like to order?");
         }
         Console.WriteLine("How many Pastries would you like to order?");
         int userPastries;
-        while (!int.TryParse(Console.ReadLine(), out userPastries))
+        while (!int.TryParse(Console.ReadLine(), out userPastries) || userPastries < 0)
         {
           Console.WriteLine("Please enter a positive number");
           Console.WriteLine("How many pastries would you like to order?");
