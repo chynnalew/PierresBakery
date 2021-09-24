@@ -1,6 +1,6 @@
-namespace File.Models
+namespace PierresBakery.Models
 {
-  public class Item
+  public class Goods
   {
 
     // properties, methods, etc. will go here.
