@@ -35,6 +35,11 @@ namespace PierresGoods.Tests
     {
       Assert.AreEqual(70, Bread.GetPrice("20"));
     }
+    [TestMethod]
+    public void GetDiscount_ReturnsDiscountTotal_Int()
+    {
+      Assert.AreEqual(10, Bread.GetDiscount("7"));
+    }
   }
    [TestClass]
   public class PastryTests
@@ -59,6 +64,11 @@ namespace PierresGoods.Tests
     public void GetPrice_ReturnsPriceOf20PastryAsThirtyFour_Int()
     {
       Assert.AreEqual(34, Pastry.GetPrice("20"));
+    }
+    [TestMethod]
+    public void GetDiscount_ReturnsDiscountTotal_Int()
+    {
+      Assert.AreEqual(2, Pastry.GetDiscount("7"));
     }
   }
 }
