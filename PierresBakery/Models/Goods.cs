@@ -4,7 +4,6 @@ namespace Goods.Models
 {
   public class Bread
   {
-    
     private static int price = 5;
     public int Amount {get; set;}
     public Bread(int amount)
@@ -55,6 +54,20 @@ namespace Goods.Models
     {
       int discount = (pastryAmount - (pastryAmount % 3)) / 3;
       return discount;
+    }
+  }
+  public class Pie
+  {
+    private static int price = 10;
+    public int Amount {get; set;}
+    public Pie(int amount)
+    {
+      Amount = amount;
+    }
+    public static int GetPrice(int pieAmount)
+    {
+      int cost = price*pieAmount;
+      return cost;
     }
   }
 }

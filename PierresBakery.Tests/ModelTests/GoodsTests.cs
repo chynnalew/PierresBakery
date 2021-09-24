@@ -71,4 +71,24 @@ namespace PierresGoods.Tests
       Assert.AreEqual(2, Pastry.GetDiscount(7));
     }
   }
+  [TestClass]
+  public class PieTests
+  {
+    [TestMethod]
+    public void Pie_CreateNewInstanceOfPie_Pie()
+    {
+      Pie testPie = new Pie(1);
+      Assert.AreEqual(typeof(Pie), testPie.GetType());
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPriceOfOnePieAsTen_Int()
+    {
+      Assert.AreEqual(10, Pie.GetPrice(1));
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPriceOfThreePieAsThirty_Int()
+    {
+      Assert.AreEqual(30, Pie.GetPrice(3));
+    }
+  }
 }

@@ -14,7 +14,7 @@
 ## Description
 
 This application was created as a week 8 independent project for Epicodus. This purpose of this application is to show an understanding and correct use of namespaces, classes, auto-implemented properties, and Test Driven Development in C#.
-This console application is a fake bakery where users can enter how many "bread" and "pastry" they would like to purchase and are returned the total cost. A single loaf of bread costs $5 with a buy 2 get 1 free discount. A "pastry" costs $2, with a 3 for $5 deal.
+This console application is a fake bakery where users can enter how many "bread", "pastry", and "pie" items they would like to purchase and are returned the total cost. A single loaf of bread costs $5 with a buy 2 get 1 free discount. A "pastry" costs $2, with a 3 for $5 deal. A "pie" costs $10, with no special discounts.
 
 ## Setup and Usage Instructions
 
@@ -41,7 +41,7 @@ This console application is a fake bakery where users can enter how many "bread"
   - Navigate to the `PierresBakery.Solution/PierresBakery` folder in the terminal
   - Run the command `$ dotnet run` 
   - The application will run in the console
-
+* Note: `$ dotnet run` will automatically restore and build the application.
 
 ## Known Bugs
 
