@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using PierresBakery.Models;
+using PierresGoods.Models;
+using CustomerOrder.Models;
 
 namespace Program
 {
