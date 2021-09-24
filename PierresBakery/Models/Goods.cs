@@ -1,3 +1,5 @@
+using System;
+
 namespace PierresBakery.Models
 {
   public class Bread
@@ -6,8 +8,18 @@ namespace PierresBakery.Models
     {
       int breadPrice = 5;
       int amountOfBreadInt = int.Parse(amountOfBread);
-      int totalCost = breadPrice*amountOfBreadInt;
-      return totalCost;
+      if (amountOfBreadInt >= 3)
+      {
+        int discount = (amountOfBreadInt/3)*5;
+        int priceBefore = amountOfBreadInt * 5;
+        int finalPrice = priceBefore - discount;
+        return finalPrice;
+      }
+      else
+      {
+        int totalCost = breadPrice*amountOfBreadInt;
+        return totalCost;
+      }
     }
   }
 }
