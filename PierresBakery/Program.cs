@@ -18,12 +18,12 @@ namespace Program
       if (seePrices == "y" || seePrices == "Y")
       {
         Console.WriteLine("---------------- \n");
-        Console.WriteLine("Bread is $5 each or three for $10! \n Pastries are $2 each or three for $5! \n");
+        Console.WriteLine("Bread is $5 each or three for $10! \nPastries are $2 each or three for $5! \n");
         Console.WriteLine("---------------- \n");
       }
       Console.WriteLine("Would you like to place an order? \n > Enter Y for Yes, any other key for No");
-      string placeOrder = Console.ReadLine();
-      if(placeOrder == "y" || placeOrder == "Y")
+      string makeOrder = Console.ReadLine();
+      while(makeOrder == "y" || makeOrder == "Y")
       {
         Console.WriteLine("---------------- \n");
         Console.WriteLine("Please enter your name: ");
@@ -45,19 +45,31 @@ namespace Program
         Console.WriteLine($"Bread Loafs: {user.BreadOrder} \n     Cost: ${breadCost}");
         Console.WriteLine($"Pastries: {user.PastryOrder} \n     Cost: ${pastryCost}");
         Console.WriteLine("-");
+        Console.WriteLine($"You saved ${totalSavings}!");
         Console.WriteLine($"Total Cost: ${totalCost} \n");
-        Console.WriteLine("-");
-        Console.WriteLine($"You saved ${totalSavings}!\n");
         Console.WriteLine("---------------- \n");
 
-        Console.WriteLine("Would you like to edit this order?\n > Enter Y for Yes, any other key for No");
+        Console.WriteLine("Is everything correct?\n > Enter Y for Yes, any other key for No");
         string editOrder = Console.ReadLine();
         if (editOrder == "y" || editOrder =="Y")
         {
-
+          Console.WriteLine("Would you like to place this order?\n > Enter Y for Yes, any other key for No");
+          string placeOrder = Console.ReadLine();
+          if (placeOrder == "y" || placeOrder =="Y")
+          {
+            Console.WriteLine("---------------- \n");
+            Console.WriteLine($"Thank you {user.OrderName}, your order has been placed.\n \nWe would give you a call when you order is ready, but unfortunately, we're not real :(");
+          }
+          break;
+        }
+        else
+        {
+          Console.WriteLine("---------------- \n");
+          Console.WriteLine("Please re-make your order: ");
         }
       }
       Console.WriteLine("Thank you for visiting Pierre's! Good Bye!");
+      Console.WriteLine("---------------- \n");
     }
   }
 }
