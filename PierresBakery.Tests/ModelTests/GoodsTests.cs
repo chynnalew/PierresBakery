@@ -18,26 +18,22 @@ namespace PierresGoods.Tests
     [TestMethod]
     public void GetPrice_ReturnsPriceOfOneLoafAsFive_Int()
     {
-      Bread testBread = new Bread();
-      Assert.AreEqual(5, testBread.GetPrice("1")); 
+      Assert.AreEqual(5, Bread.GetPrice("1")); 
     }
     [TestMethod]
     public void GetPrice_ReturnsPriceOfTwoLoafs_Int()
     {
-      Bread testBread = new Bread();
-      Assert.AreEqual(10, testBread.GetPrice("2"));
+      Assert.AreEqual(10, Bread.GetPrice("2"));
     }
     [TestMethod]
     public void GetPrice_ReturnsPriceOfThreeLoafsWithDiscount_Int()
     {
-      Bread testBread = new Bread();
-      Assert.AreEqual(10, testBread.GetPrice("3"));
+      Assert.AreEqual(10, Bread.GetPrice("3"));
     }
     [TestMethod]
     public void GetPrice_ReturnsPriceOfTwentyLoafsWithDiscount_Int()
     {
-      Bread testBread = new Bread();
-      Assert.AreEqual(70, testBread.GetPrice("20"));
+      Assert.AreEqual(70, Bread.GetPrice("20"));
     }
   }
    [TestClass]
@@ -52,20 +48,17 @@ namespace PierresGoods.Tests
     [TestMethod]
     public void GetPrice_ReturnsPriceOfOnePastryAsTwo_Int()
     {
-      Pastry testPastry = new Pastry();
-      Assert.AreEqual(2, testPastry.GetPrice("1"));
+      Assert.AreEqual(2, Pastry.GetPrice("1"));
     }
     [TestMethod]
     public void GetPrice_ReturnsPriceOfThreePastryAsFive_Int()
     {
-      Pastry testPastry = new Pastry();
-      Assert.AreEqual(5, testPastry.GetPrice("3"));
+      Assert.AreEqual(5, Pastry.GetPrice("3"));
     }
     [TestMethod]
     public void GetPrice_ReturnsPriceOf20PastryAsThirtyFour_Int()
     {
-      Pastry testPastry = new Pastry();
-      Assert.AreEqual(34, testPastry.GetPrice("20"));
+      Assert.AreEqual(34, Pastry.GetPrice("20"));
     }
   }
 }

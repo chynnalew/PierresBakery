@@ -4,7 +4,7 @@ namespace PierresGoods.Models
 {
   public class Bread
   {
-    public int GetPrice(string breadAmount)
+    public static int GetPrice(string breadAmount)
     {
       int breadPrice = 5;
       int breadAmountInt = int.Parse(breadAmount);
@@ -24,7 +24,7 @@ namespace PierresGoods.Models
   }
   public class Pastry
   {
-    public int GetPrice(string pastryAmount)
+    public static int GetPrice(string pastryAmount)
     {
       int pastryPrice = 2;
       int pastryAmountInt = int.Parse(pastryAmount);
