@@ -50,10 +50,22 @@ namespace PierresBakery.Tests
       Assert.AreEqual(typeof(Pastry), testPastry.GetType());
     }
     [TestMethod]
-    public void GetPrice_ReturnsPriceOfOnePatryAsTwo_Int()
+    public void GetPrice_ReturnsPriceOfOnePastryAsTwo_Int()
     {
       Pastry testPastry = new Pastry();
       Assert.AreEqual(2, testPastry.GetPrice("1"));
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPriceOfThreePastryAsFive_Int()
+    {
+      Pastry testPastry = new Pastry();
+      Assert.AreEqual(5, testPastry.GetPrice("3"));
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPriceOf20PastryAsThirtyFour_Int()
+    {
+      Pastry testPastry = new Pastry();
+      Assert.AreEqual(34, testPastry.GetPrice("20"));
     }
   }
 }

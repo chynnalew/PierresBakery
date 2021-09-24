@@ -10,8 +10,8 @@ namespace PierresBakery.Models
       int breadAmountInt = int.Parse(breadAmount);
       if (breadAmountInt >= 3)
       {
-        int discount = (breadAmountInt/3)*5;
-        int priceBefore = breadAmountInt * 5;
+        int discount = (breadAmountInt - (breadAmountInt % 3)) / 3 * breadPrice;
+        int priceBefore = breadAmountInt * breadPrice;
         int finalPrice = priceBefore - discount;
         return finalPrice;
       }
@@ -30,7 +30,10 @@ namespace PierresBakery.Models
       int pastryAmountInt = int.Parse(pastryAmount);
       if (pastryAmountInt >= 3)
       {
-        return 1;
+        int discount = (pastryAmountInt - (pastryAmountInt % 3)) / 3;
+        int priceBefore = pastryAmountInt * pastryPrice;
+        int finalPrice = priceBefore - discount;
+        return finalPrice;
       }
       else
       {
