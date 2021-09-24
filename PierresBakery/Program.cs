@@ -32,20 +32,22 @@ namespace Program
         Console.WriteLine("Please enter your name: ");
         string userName = Console.ReadLine();
         Console.WriteLine("How many loaves of bread would you like to order?");
-        int userBread;
-        while (!int.TryParse(Console.ReadLine(), out userBread) || userBread < 0)
+        int breadAmount;
+        while (!int.TryParse(Console.ReadLine(), out breadAmount) || breadAmount < 0)
         {
           Console.WriteLine("Please enter a positive number");
           Console.WriteLine("How many loaves of bread would you like to order?");
         }
         Console.WriteLine("How many Pastries would you like to order?");
-        int userPastries;
-        while (!int.TryParse(Console.ReadLine(), out userPastries) || userPastries < 0)
+        int pastryAmount;
+        while (!int.TryParse(Console.ReadLine(), out pastryAmount) || pastryAmount < 0)
         {
           Console.WriteLine("Please enter a positive number");
           Console.WriteLine("How many pastries would you like to order?");
         }
-        Customer user = new Customer(userName, userBread, userPastries);
+        Bread userBread = new Bread(breadAmount);
+        Pastry userPastry = new Pastry(pastryAmount);
+        Customer user = new Customer(userName, userBread.Amount, userPastry.Amount);
 
         int breadCost = Bread.GetPrice(user.BreadOrder);
         int pastryCost = Pastry.GetPrice(user.PastryOrder);
