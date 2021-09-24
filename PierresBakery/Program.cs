@@ -9,14 +9,20 @@ namespace Program
   {
     static void Main()
     {
+      Console.Clear();
       Console.WriteLine("---------------- \n");
       Console.WriteLine("WELCOME TO PIERRE'S BAKERY \n");
       Console.WriteLine("---------------- \n");
-      Console.WriteLine("We are currently serving Bread and Pastries \n");
-      Console.WriteLine("Would you like to see our prices? \n > Enter Y for Yes, any other key for No");
+      Console.WriteLine("We are currently serving Bread and Pastries \nPress Enter to start");
+      Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("---------------- \n");
+      Console.WriteLine("Would you like to see our prices? \n > Enter Y for Yes, any other key for No\n");
+      Console.WriteLine("---------------- \n");
       string seePrices = Console.ReadLine();
       if (seePrices == "y" || seePrices == "Y")
       {
+        Console.Clear();
         Console.WriteLine("---------------- \n");
         Console.WriteLine("Bread is $5 each or three for $10! \nPastries are $2 each or three for $5! \n");
         Console.WriteLine("---------------- \n");
@@ -25,6 +31,7 @@ namespace Program
       string makeOrder = Console.ReadLine();
       while (makeOrder == "y" || makeOrder == "Y")
       {
+        Console.Clear();
         Console.WriteLine("---------------- \n");
         Console.WriteLine("Please enter your name: ");
         string userName = Console.ReadLine();
@@ -48,17 +55,18 @@ namespace Program
         int pastryCost = Pastry.GetPrice(user.PastryOrder);
         int totalCost = breadCost + pastryCost;
         int totalSavings = Bread.GetDiscount(user.BreadOrder)+Pastry.GetDiscount(user.PastryOrder);
+        Console.Clear();
         Console.WriteLine("---------------- \n");
         Console.WriteLine("Your Order: \n");
         Console.WriteLine($"Order Name: {user.OrderName}");
-        Console.WriteLine($"Bread Loafs: {user.BreadOrder} \n     Cost: ${breadCost}");
-        Console.WriteLine($"Pastries: {user.PastryOrder} \n     Cost: ${pastryCost}");
+        Console.WriteLine($"Bread Loafs: {user.BreadOrder} \nBread Cost: ${breadCost}");
+        Console.WriteLine($"Pastries: {user.PastryOrder} \nPastry Cost: ${pastryCost}");
         Console.WriteLine("-");
         Console.WriteLine($"You saved ${totalSavings}!");
         Console.WriteLine($"Total Cost: ${totalCost} \n");
         Console.WriteLine("---------------- \n");
 
-        Console.WriteLine("Is everything correct?\n > Enter Y for Yes, any other key for No");
+        Console.WriteLine("Is everything correct?\n > Enter Y for Yes, any other key to re-make your order");
         string editOrder = Console.ReadLine();
         if (editOrder == "y" || editOrder =="Y")
         {
@@ -66,17 +74,18 @@ namespace Program
           string placeOrder = Console.ReadLine();
           if (placeOrder == "y" || placeOrder =="Y")
           {
+            Console.Clear();
             Console.WriteLine("---------------- \n");
             Console.WriteLine($"Thank you {user.OrderName}, your order has been placed.\n \nWe would give you a call when you order is ready, but unfortunately, we're not real :(");
+            Console.WriteLine("---------------- \n");
+            Console.WriteLine("Enter any key to Exit");
+            Console.ReadLine();
           }
           break;
         }
-        else
-        {
-          Console.WriteLine("---------------- \n");
-          Console.WriteLine("Please re-make your order: ");
-        }
       }
+      Console.Clear();
+      Console.WriteLine("---------------- \n");
       Console.WriteLine("Thank you for visiting Pierre's! Good Bye!");
       Console.WriteLine("---------------- \n");
     }
