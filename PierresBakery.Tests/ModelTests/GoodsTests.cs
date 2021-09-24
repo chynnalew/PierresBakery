@@ -16,7 +16,7 @@ namespace PierresBakery.Tests
     }
     
     [TestMethod]
-    public void GetPrice_ReturnsPriceOfOneLoafAsOne_Int()
+    public void GetPrice_ReturnsPriceOfOneLoafAsFive_Int()
     {
       Bread testBread = new Bread();
       Assert.AreEqual(5, testBread.GetPrice("1")); 
@@ -34,10 +34,26 @@ namespace PierresBakery.Tests
       Assert.AreEqual(10, testBread.GetPrice("3"));
     }
     [TestMethod]
-    public void GetPrice_ReturnsPriceOfTenLoafsWithDiscount_Int()
+    public void GetPrice_ReturnsPriceOfTwentyLoafsWithDiscount_Int()
     {
       Bread testBread = new Bread();
-      Assert.AreEqual(35, testBread.GetPrice("10"));
+      Assert.AreEqual(70, testBread.GetPrice("20"));
+    }
+  }
+   [TestClass]
+  public class PastryTests
+  {
+    [TestMethod]
+    public void Pastry_CreateNewInstanceOfPastry_Pastry()
+    {
+      Pastry testPastry = new Pastry();
+      Assert.AreEqual(typeof(Pastry), testPastry.GetType());
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPriceOfOnePatryAsTwo_Int()
+    {
+      Pastry testPastry = new Pastry();
+      Assert.AreEqual(2, testPastry.GetPrice("1"));
     }
   }
 }
