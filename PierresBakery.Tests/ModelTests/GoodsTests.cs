@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PierresGoods.Models;
+using Goods.Models;
 using System;
 using System.Collections.Generic;
 

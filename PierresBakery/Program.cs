@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using PierresGoods.Models;
+using Goods.Models;
 using CustomerOrder.Models;
 
 namespace Program
@@ -23,16 +23,25 @@ namespace Program
       }
       Console.WriteLine("Would you like to place an order? \n > Enter Y for Yes, any other key for No");
       string makeOrder = Console.ReadLine();
-      while(makeOrder == "y" || makeOrder == "Y")
+      while (makeOrder == "y" || makeOrder == "Y")
       {
         Console.WriteLine("---------------- \n");
         Console.WriteLine("Please enter your name: ");
         string userName = Console.ReadLine();
         Console.WriteLine("How many loafs of bread would you like to order?");
-        string userBread = Console.ReadLine();
+        int userBread;
+        while (!int.TryParse(Console.ReadLine(), out userBread))
+        {
+          Console.WriteLine("Please enter a positive number");
+          Console.WriteLine("How many loafs of bread would you like to order?");
+        }
         Console.WriteLine("How many Pastries would you like to order?");
-        string userPastries = Console.ReadLine();
-  
+        int userPastries;
+        while (!int.TryParse(Console.ReadLine(), out userPastries))
+        {
+          Console.WriteLine("Please enter a positive number");
+          Console.WriteLine("How many pastries would you like to order?");
+        }
         Customer user = new Customer(userName, userBread, userPastries);
 
         int breadCost = Bread.GetPrice(user.BreadOrder);

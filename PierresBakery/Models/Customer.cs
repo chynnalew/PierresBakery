@@ -5,10 +5,10 @@ namespace CustomerOrder.Models
   public class Customer
   {
     public string OrderName {get; set;}
-    public string BreadOrder {get; set;}
-    public string PastryOrder {get; set;}
+    public int BreadOrder {get; set;}
+    public int PastryOrder {get; set;}
 
-    public Customer(string name, string breadAmount, string pastryAmount)
+    public Customer(string name, int breadAmount, int pastryAmount)
     {
       OrderName = name;
       BreadOrder = breadAmount;
